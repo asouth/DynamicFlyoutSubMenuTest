@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "6M0KGgFM5khCHOcXeKFK1COD3SrlR+J1c4ruKYuy+5RomDIA0uiyvc55VQUfV1U9zdzFJDRN+1AUadu4cwDNoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mraps\\source\\repos\\DynamicFlyoutMenuTest.Core\\DynamicFlyoutMenuTest.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mraps\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\mraps\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
