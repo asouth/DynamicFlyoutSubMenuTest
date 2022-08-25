@@ -1,0 +1,10 @@
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\bin\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.deps.json
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\bin\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.dll
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\bin\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.pdb
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.csproj.AssemblyReference.cache
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.AssemblyInfoInputs.cache
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.AssemblyInfo.cs
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.csproj.CoreCompileInputs.cache
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.dll
+C:\Users\mraps\source\repos\DynamicFlyoutMenuTest.Core\obj\Debug\netstandard2.0\DynamicFlyoutMenuTest.Core.pdb

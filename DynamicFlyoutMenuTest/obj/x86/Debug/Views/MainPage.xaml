@@ -1,0 +1,68 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="DynamicFlyoutMenuTest.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:DynamicFlyoutMenuTest.ViewModels"  
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:ConnectionId='2' x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Main_Title"
+            Style="{StaticResource PageTitleStyle}" />
+        <Grid
+            Grid.Row="1" 
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <StackPanel>
+            <Button x:ConnectionId='3' Name="AddCustomListItemBtn"                                   >Add Custom ListItem</Button>
+            <ListView x:ConnectionId='4' Name="LayerListBox" Height="Auto" BorderBrush="{ThemeResource SystemBaseLowColor}" BorderThickness="1.0"                                                   >
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid Padding="2" Background="{ThemeResource SystemBaseLowColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition Width="132"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Name" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            <TextBlock Text="Active" Grid.Column="1" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="TableDataTemplate"                                    >
+                        <Grid x:ConnectionId='7' Height="48"                                              >
+                            <Grid.ColumnDefinitions>                                
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition Width="132"/>
+                                <ColumnDefinition Width="132"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock x:ConnectionId='8' Grid.Column="0" Padding="10" VerticalAlignment="Center"                                      />
+                            <CheckBox x:ConnectionId='9' Grid.Column="1" VerticalAlignment="Center"                                                                                     />
+                            <Button Grid.Column="2" Name="exportLayerButton" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                                <Button.Flyout>
+                                    <MenuFlyout x:ConnectionId='11'                             >
+                                        <MenuFlyoutItem x:ConnectionId='12' Name="Action1Btn" Text="Action 1"                         />
+                                        <MenuFlyoutItem x:ConnectionId='13' Name="Action2Btn" Text="Action 2"                         />
+                                        <MenuFlyoutSubItem x:Name="SubActionsBtn" Text="Choose Sub Action">
+                                            <MenuFlyoutItem Name="NoSubActionBtn" Text="None"/>
+                                        </MenuFlyoutSubItem>                                      
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                                <Polygon Points="0,0 6,4,0,8" Stroke="Black" Fill="Black" />
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
+

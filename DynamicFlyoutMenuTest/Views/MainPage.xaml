@@ -1,0 +1,67 @@
+﻿<Page
+    x:Class="DynamicFlyoutMenuTest.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:DynamicFlyoutMenuTest.ViewModels"  
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid x:Name="ContentArea" Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Main_Title"
+            Style="{StaticResource PageTitleStyle}" />
+        <Grid
+            Grid.Row="1" 
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <StackPanel>
+            <Button Name="AddCustomListItemBtn" Click="AddCustomListItemBtn_Click">Add Custom ListItem</Button>
+            <ListView Name="LayerListBox" Height="Auto" BorderBrush="{ThemeResource SystemBaseLowColor}" BorderThickness="1.0" ItemsSource="{x:Bind ViewModel.MyCustomListItems}">
+                <ListView.HeaderTemplate>
+                    <DataTemplate>
+                        <Grid Padding="2" Background="{ThemeResource SystemBaseLowColor}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition Width="132"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Name" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                            <TextBlock Text="Active" Grid.Column="1" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate x:Name="TableDataTemplate" x:DataType="local:MyCustomListItem">
+                        <Grid Height="48" AutomationProperties.Name="{x:Bind ItemName}">
+                            <Grid.ColumnDefinitions>                                
+                                <ColumnDefinition Width="190"/>
+                                <ColumnDefinition Width="132"/>
+                                <ColumnDefinition Width="132"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Padding="10" VerticalAlignment="Center" Text="{x:Bind ItemName, Mode=OneWay}"/>
+                            <CheckBox Grid.Column="1" VerticalAlignment="Center" IsChecked="{x:Bind isEditing, Mode = TwoWay, UpdateSourceTrigger = PropertyChanged}"/>
+                            <Button Grid.Column="2" Name="exportLayerButton" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                                <Button.Flyout>
+                                    <MenuFlyout Opening="MenuFlyout_Opening">
+                                        <MenuFlyoutItem Name="Action1Btn" Text="Action 1" Click="Action1Btn_Click"/>
+                                        <MenuFlyoutItem Name="Action2Btn" Text="Action 2" Click="Action2Btn_Click"/>
+                                        <MenuFlyoutSubItem x:Name="SubActionsBtn" Text="Choose Sub Action">
+                                            <MenuFlyoutItem Name="NoSubActionBtn" Text="None"/>
+                                        </MenuFlyoutSubItem>                                      
+                                    </MenuFlyout>
+                                </Button.Flyout>
+                                <Polygon Points="0,0 6,4,0,8" Stroke="Black" Fill="Black" />
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
